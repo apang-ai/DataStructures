@@ -66,6 +66,7 @@
 '''
     1、什么是算法？
         算法就是独立存在的一种解决问题的方法和思想！
+
     2、算法的五大特性
         输入： 算法具有0个或者多个输入
         输出： 算法至少有1个或者多个输出
@@ -80,12 +81,161 @@
     4、 最终算法用什么衡量？
         时间复杂度
 
-    5、 表示法 大o记发
-        o(n^3)
+    5、 表示法 大o记法
+
+        假设计算机执行算法的每个基本操作的时间是固定的一个时间单位，那么有多少个基本操作就代表会花费多少时间单位，虽然对于不同的机器环境而言， 确切的时间单位是不同的， 但是对与算法进行多少个基本操作在规模数量级上是相同的，因此，可以忽略机器的环境而客观的反应算法的时间效率
+        对于算法的时间效率，用“大o记法”
+        o(n^3)         100n^2    1000n^2
         o(n^2)
+
+    6、 时间复杂度分类
+        最优时间复杂度：算法完成工作最少需要多少基本操作(过于理想化， 没什么参考价值)
+        最坏时间复杂度： 算法完成工作最多需要多少基本操作(提供了一种保障， 表明了算法在此程度的基本操作中一定能完成工作)
+        平均时间复杂度： 算法完成工作平均需要多少基本操作(对算法整体一个全面的评价，但是这种衡量方式没有保障)
+
+        我们关注算法的最坏情况 ！！！   --->  最坏时间复杂度
+
+    7、 时间复杂度的几条基本的计算规则
+        基本的操作： 只有常数项，认为其时间复杂度为o(1)
+
+        顺序结构： 时间复杂度按加法进行计算
+
+        循环结构： 时间复杂度按乘法进行计算 
+
+        分支： 取最大值
+
+        判断一个算法的效率时只需要关注操作数量的最高次项，其他次要项和常数项可以忽略
+        没有特殊情况下，我们分析的都是最坏时间复杂度
+
+    8、 练习
+        12                          o(1)
+        2n +3                       o(n)
+        3n^2 + 2n +1                o(n^2)
+        5log n + 20                 o(log n)
+        2n + 5nlog n + 20           o(nlog n)
+        1000n^2 + 2*n^3 + 4         o(n^3)
+        2^n                         o(2^n)
+
+        o(1) < o(log n) < o(n) < o(nlog n) < o(n^2) < o(n^3) < o(2^n) < o(n!) < o(n^n)
+    
+    9、 练习： 求前n个正整数的和(高斯算法)
 '''
+import time
+
+# def sum_of_n(n):
+#     start_time = time.time()
+
+#     the_sum = 0
+#     for i in range(1, n+1):
+
+#         the_sum += i
+
+#     end_time = time.time()
+#     # time_t = end_time-start_time
+#     the_sum_i=end_time-start_time
+#     return the_sum, the_sum_i
+
+# for i in range(0, 5):
+#     print(sum_of_n(100000000))
 
 
+
+# def sum_of_n_2(n):
+    
+
+    
+    # return (n*(n+1))/2
+
+# start_time = time.time()
+# print(sum_of_n_2(100000000))
+# end_time = time.time()
+
+# print(end_time-start_time)
+
+
+'''
+练习：编写函数求出列表中的最小值，
+要求:  函数1： o(n^2)    两两比较
+       函数2： o(n)     设置一个临时变量, 更优化的算法就是把临时变量设置成列表中的第一个元素
+
+'''
+my_list = [1000,3,4,9,5,8,100]
+
+def get_min(my_list):
+
+    for i in range(len(my_list)):
+        print('i:%d'%i)
+        for j in range(len(my_list)):
+            print('j:%d'%j)
+            if my_list[i] > my_list[j]:
+                
+                break    
+            else:
+                return my_list[i]
+                
+    
+print(get_min(my_list))
+
+# def get_min2(my_list):
+#     min_num = my_list[0]
+
+#     for i in my_list:
+
+#         if i < min_num:
+
+#             min_num = i
+
+#     return min_num
+
+# print(get_min2(my_list))
+    
 
 
 # 作业 计算前1000个 正整数的和（2种算法）
+
+# 第一种算法
+
+# import time 
+
+# start_time = time.time()
+
+# sum = 0
+
+# for i in range(0, 1001):
+
+#     sum += i
+
+# print('sum的值：%d'%sum)
+
+# end_time = time.time()
+
+# print('运行的时间：%f'% (end_time-start_time))
+
+'''
+    sum的值：500500
+    运行的时间：0.001076
+'''
+
+# 第二种
+# import time 
+
+# start_time = time.time()
+
+# sum = 500
+
+# for n in range(0, 500):
+
+#     sum += (0 + n) + (1000 - n)
+
+
+# print('sum的值：%d'%sum)
+
+# end_time = time.time()
+
+# print('运行的时间：%f'% (end_time-start_time))
+
+
+'''
+    sum的值：500500
+    运行的时间：0.001017
+'''
