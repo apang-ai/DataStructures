@@ -105,14 +105,21 @@ from timeit import Timer
 
     i=n
     while i > 0:           o(n)      
-        k = 2+2            
-        i = i//2
+        k = 2+2         
+        i = i//2           
 '''
 
 '''
     作业： 验证列表索引的操作是o(1), 并将时间复杂度改成o(n)
 '''
+li = [1, 2, 3, 4, 5, 6]
 
+a = li[0]
+
+for index, i in enumerate(li):
+
+    a = li[index]
+    print(a)
 
 
 
