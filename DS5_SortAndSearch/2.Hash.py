@@ -32,9 +32,8 @@
         非数字：cat 怎么存cat这种非数字 ==> 通过ASCII转换成数字  a:97  c:99  t:116
 
         97+99+116 = 312   312%11 = 4
-'''
 
-# 通过ASCII转换成数字的散列函数
+        # 通过ASCII转换成数字的散列函数
 def hash(astring, tablesize):
 
     sum = 0
@@ -45,3 +44,6 @@ def hash(astring, tablesize):
     return sum%tablesize
 
 print(hash('cat', 11))
+'''
+
+
