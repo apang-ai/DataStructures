@@ -368,3 +368,56 @@ alist = [54,26,93,17,77,31,44,55,20]
 quickSort(alist)
 print(alist)
 
+
+
+# 选择排序
+# class Solution:
+#     def sortArray(self, nums: List[int]) -> List[int]:
+
+#         for index in range(len(nums)):
+
+#             for i in range(index, len(nums)):
+
+#                 if nums[index] > nums[i]:
+
+#                     nums[index], nums[i] = nums[i], nums[index]
+        
+#         return nums
+
+
+# s = Solution()
+# nums = [5,2,3,1]
+# s.sortArray(nums)
+# print(nums)
+
+# 插入排序
+# class Solution:
+#     def sortArray(self, nums: List[int]) -> List[int]:
+
+#         length = len(nums)
+
+#         for i in range(1, length):
+
+#             while i > 0 and nums[i-1] > nums[i]:
+
+#                 nums[i-1], nums[i] = nums[i], nums[i-1]
+
+#                 i -= 1
+
+#         return nums
+
+# 冒泡排序
+# class Solution:
+#     def sortArray(self, nums: List[int]) -> List[int]:
+
+#         length = len(nums)
+
+#         for i in range(length):
+
+#             for j in range(1, length-i):
+
+#                 if nums[j-1] > nums[j]:
+
+#                     nums[j-1], nums[j] = nums[j], nums[j-1]
+
+#         return nums
